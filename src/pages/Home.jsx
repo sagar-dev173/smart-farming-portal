@@ -7,20 +7,22 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import CropCard from "../components/CropCard";
 import { cropRate } from "../data/cropRate";
-import { storeData } from "../data/storeData";
 import Header from "../components/Header";
+import WeatherCard from "../components/WeatherCard";
+import { useWeather } from "../hooks/useweather";
+
 
 const Home = () => {
   const [crop, setCrop] = useState([]);
-  const [storedata, setstoreData] = useState([]);
+ 
 
   useEffect(() => {
     setCrop(cropRate);
   }, []);
 
-  useEffect(() => {
-    setstoreData(storeData);
-  }, []);
+
+
+  const { forecast, loading } = useWeather();
 
   return (
     <div className="bg-gray-50">
@@ -77,6 +79,34 @@ const Home = () => {
         `}
         </style>
       </section>
+
+{/* ========================== WEATHER PREVIEW ========================== */}
+<section className="py-20 px-6 bg-linear-to-br from-sky-800 to-sky-950 text-white">
+  <h2 className="text-4xl font-bold mb-10 text-center">
+    🌦 Weather Forecast
+  </h2>
+
+  {loading ? (
+    <p className="text-center">Loading weather...</p>
+  ) : (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {forecast.slice(0, 3).map((day, index) => (
+        <WeatherCard key={index} day={day} />
+      ))}
+    </div>
+  )}
+
+  <div className="mt-10 text-center">
+    <Link
+      to="/weather"
+      className="inline-block bg-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:bg-yellow-500 transition"
+    >
+      Show Detailed Weather →
+    </Link>
+  </div>
+</section>
+
+
       {/* ========================== LIVE NEWS ========================== */}
       <section
         id="live-news"
@@ -128,7 +158,7 @@ const Home = () => {
         className="py-20 px-6 bg-white"
         style={{
           backgroundImage:
-            "url('')",
+            "url('/marketImg/croprate-banner.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -166,7 +196,7 @@ const Home = () => {
 
 
       {/* ========================== GOVT SCHEMES ========================== */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-10 px-6 bg-white">
         <h2 className="text-4xl font-bold text-green-700 mb-10">
           Government Schemes
         </h2>

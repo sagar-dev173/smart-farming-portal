@@ -26,7 +26,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navbar */}
-          <nav className="hidden md:flex items-center gap-8 font-semibold text-green-900">
+          <nav className="hidden md:flex items-center gap-8 font-bold text-green-900 ">
             {["weather","MarketRates","news","GovtScheme"].map((item)=>(
               <Link
                 key={item}
@@ -37,12 +37,7 @@ export default function Header() {
                 {item.charAt(0).toUpperCase()+item.slice(1)}
               </Link>
             ))}
-            <Link
-              to="/dashboard"
-              className="bg-yellow-400 text-black px-4 py-2 rounded-lg shadow hover:bg-yellow-500 transition"
-            >
-              Dashboard
-            </Link>
+            
           </nav>
 
           {/* Mobile Menu Button */}
@@ -53,7 +48,7 @@ export default function Header() {
 
         {/* Mobile Dropdown */}
         {open && (
-          <div className="md:hidden bg-white/20 backdrop-blur-md border-t border-white/10 px-6 pb-6 space-y-4 font-semibold text-green-900">
+          <div className="md:hidden bg-white/20 backdrop-blur-md border-t border-white/10 px-6 pb-6 space-y-4 font-bold text-green-900">
             {["weather","MarketRates","news","GovtScheme","store"].map((item)=>(
               <Link
                 key={item}
@@ -63,12 +58,7 @@ export default function Header() {
                 {item.charAt(0).toUpperCase()+item.slice(1)}
               </Link>
             ))}
-            <Link
-              to="/dashboard"
-              className="block bg-yellow-400 text-black px-4 py-2 mt-3 rounded-lg shadow hover:bg-yellow-500 transition text-center"
-            >
-              Dashboard
-            </Link>
+            
           </div>
         )}
       </div>

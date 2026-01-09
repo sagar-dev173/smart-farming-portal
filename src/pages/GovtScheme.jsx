@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 const GovtScheme = () => {
   return (
 
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 relative">
+    <div className="min-h-screen bg-linear-to-br from-green-50 to-green-100 relative">
       {/* Header Banner */}
       <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-xl mb-10">
 
@@ -18,7 +18,7 @@ const GovtScheme = () => {
         />
 
         {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-green-900/60 to-transparent"></div>
 
         {/* Banner Text */}
         <div className="absolute top-1/2 -translate-y-1/2 left-8 sm:left-14 md:left-20">
@@ -51,7 +51,7 @@ const GovtScheme = () => {
 
       {/* Bottom Highlight */}
       <div className="relative max-w-5xl mx-auto mt-20 mb-10 p-10 
-                      rounded-3xl bg-gradient-to-r from-green-700 to-green-500 
+                      rounded-3xl bg-linear-to-r from-green-700 to-green-500 
                       text-white shadow-2xl text-center">
         <h2 className="text-2xl font-bold">Stay Updated</h2>
         <p className="mt-2 text-white/90">
