@@ -98,6 +98,6 @@ export const cropRate = [
     maxPrice: 4000,
     category: "Grain",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/soyabean.jpg"
+    image:"/marketImg/soyabean.jpg"
   },
 ];
