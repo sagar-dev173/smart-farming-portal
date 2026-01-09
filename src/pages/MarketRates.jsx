@@ -14,7 +14,7 @@ const CropRates = () => {
       </header>
 
       {/* ================= HERO BANNER ================= */}
-      <section className="relative w-full h-72 sm:h-96 lg:h-[28rem] overflow-hidden rounded-b-3xl shadow-lg">
+      <section className="relative w-full h-72 sm:h-96 lg:h-112 overflow-hidden rounded-b-3xl shadow-lg">
         <img
           src="/allVegetable.png"
           alt="Crop Market Rates"

@@ -7,7 +7,7 @@ export const cropRate = [
     maxPrice: 2500,
     category: "Grain",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/wheat.png"
+    image:"/marketImg/wheat.png"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const cropRate = [
     maxPrice: 3400,
     category: "Grain",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/rice.jpg"
+    image:"/marketImg/rice.jpg"
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const cropRate = [
     maxPrice: 1200,
     category: "Vegetable",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/tomato.jpg"
+    image:"/marketImg/tomato.jpg"
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const cropRate = [
     maxPrice: 6900,
     category: "Cash Crop",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/cotton.jpg"
+    image:"/marketImg/cotton.jpg"
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const cropRate = [
     maxPrice: 3600,
     category: "Cash Crop",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/sugarcane.jpg"
+    image:"/marketImg/sugarcane.jpg"
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const cropRate = [
     maxPrice: 1600,
     category: "Vegetable",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/onion.jpg"
+    image:"/marketImg/onion.jpg"
     
   },
   {
@@ -68,7 +68,7 @@ export const cropRate = [
     maxPrice: 2200,
     category: "Grain",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/maize.jpg"
+    image:"/marketImg/maize.jpg"
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ export const cropRate = [
     maxPrice: 5800,
     category: "Spice",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/chili.jpg"
+    image:"/marketImg/chili.jpg"
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ export const cropRate = [
     maxPrice: 1100,
     category: "Vegetable",
     date: "Updated: Nov 2025",
-    image:"../public/marketImg/potato.jpg"
+    image:"/marketImg/potato.jpg"
   },
   {
     id: 10,

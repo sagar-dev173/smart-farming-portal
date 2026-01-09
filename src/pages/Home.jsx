@@ -128,7 +128,7 @@ const Home = () => {
         className="py-20 px-6 bg-white"
         style={{
           backgroundImage:
-            "url('https://cdn.pixabay.com/photo/2017/06/10/05/26/rice-terraces-2389023_1280.jpg')",
+            "url('')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
