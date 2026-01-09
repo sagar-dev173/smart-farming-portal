@@ -1,16 +1,59 @@
-# React + Vite
+Smart Farming Portal
+A simple and beginner-friendly web project focused on providing useful information related to smart farming and agriculture.
+This project is built to practice frontend development and real-world deployment using Netlify.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Website:
+https://smart-farming-portal.netlify.app/
 
-Currently, two official plugins are available:
+- About the Project
+Smart Farming Portal is a static web application designed to:
+Share basic farming-related information
+Display crop rates and market-related visuals
+Practice clean UI, image handling, and deployment workflow
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is part of my learning journey as a web developer.
 
-## React Compiler
+🚀 Features
+✅ Clean and simple user interface
+✅ Responsive layout (works on mobile & desktop)
+✅ Images served from public assets
+✅ Deployed live using Netlify
+✅ Beginner-friendly project structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🛠️ Tech Stack
+HTML
+CSS
+JavaScript
+Netlify (for hosting)
+GitHub (version control)
 
-## Expanding the ESLint configuration
+smart-farming-portal/
+│
+├── public/
+│   └── marketImg/
+│       └── images used in crop rate section
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ - Deployment
+This project is deployed using Netlify and automatically updates when changes are pushed to GitHub.
+
+- Learning Outcome:-
+Through this project, I learned:
+How to structure a frontend project
+How to handle public assets correctly
+How Netlify deployment works
+How to debug real hosting issues
+How to make a project live for public access
+
+Author:-
+Sagar
+Aspiring Web Developer 
+Building projects to improve skills and create a strong portfolio.
+
+Note:-
+This project is created for learning and practice purposes.
+More features and improvements may be added in future projects.
