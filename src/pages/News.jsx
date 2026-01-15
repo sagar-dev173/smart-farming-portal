@@ -1,10 +1,12 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Search, Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 import NewsCard from "../components/NewsCard"
 import { newsData } from "../data/newsData"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import { useLanguage } from "../context/LanguageContext";
+import { commonText } from "../lang/commonLang"
 
 const categories = [
   "All",
@@ -16,17 +18,19 @@ const categories = [
 ]
 
 export default function NewsWebsite() {
+  const { language } = useLanguage();
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [search, setSearch] = useState("")
   const [activeCategory, setActiveCategory] = useState("All")
 
   const filteredNews = newsData.filter((item) => {
     const matchesSearch =
-      item.title.toLowerCase().includes(search.toLowerCase()) ||
-      item.description.toLowerCase().includes(search.toLowerCase())
+      item.title[language].toLowerCase().includes(search.toLowerCase()) ||
+      item.description[language].toLowerCase().includes(search.toLowerCase())
 
     const matchesCategory =
-      activeCategory === "All" || item.category === activeCategory
+      activeCategory === "All" || item.category[language] === activeCategory
 
     return matchesSearch && matchesCategory
   })
@@ -92,7 +96,7 @@ export default function NewsWebsite() {
       >
         <div className="bg-black/50 p-6 rounded-xl text-center">
           <h2 className="text-white text-3xl sm:text-4xl font-bold">
-            Daily Agriculture News
+            {commonText.latestNews[language]}
           </h2>
           <p className="text-gray-200 mt-2">
             Farming • Weather • Markets • Government

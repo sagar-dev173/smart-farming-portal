@@ -1,12 +1,19 @@
-import React from "react";
 import { schemesData } from "../data/schemesData";
 import SchemeCard from "../components/SchemeCard";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
+import { commonText } from "../lang/commonLang";
+import { useLanguage } from "../context/LanguageContext";
 
 const GovtScheme = () => {
+  const { language } = useLanguage();
   return (
 
+
     <div className="min-h-screen bg-linear-to-br from-green-50 to-green-100 relative">
+       <header className="sticky top-0 z-50">
+              <Header />
+        </header>
       {/* Header Banner */}
       <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-xl mb-10">
 
@@ -23,7 +30,7 @@ const GovtScheme = () => {
         {/* Banner Text */}
         <div className="absolute top-1/2 -translate-y-1/2 left-8 sm:left-14 md:left-20">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
-            Government Schemes for Farmers
+            {commonText.govtSchemes[language]}
           </h1>
           <p className="text-white/90 mt-3 max-w-xl text-sm sm:text-base">
             Explore important government initiatives designed to empower and uplift

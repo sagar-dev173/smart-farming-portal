@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { Leaf, Menu, X } from "lucide-react";
 import { useState } from "react";
+import LanguageToggle from "./LanguageToggle"; // ✅ existing component use
+import { useLanguage } from "../context/LanguageContext";
+import { navbarText } from "../lang/navbarText";
 
 export default function Header() {
+  const { language } = useLanguage();
   const [open, setOpen] = useState(false);
 
   return (
     <header className="relative overflow-hidden top-0 z-50">
-      
       {/* 3D Animated Blobs Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute w-[800px] h-[800px] bg-green-600 rounded-full blur-[140px] animate-float1 opacity-40"></div>
@@ -22,22 +25,22 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <Leaf size={28} className="text-yellow-400" />
-            <span className="text-2xl font-bold tracking-wide text-green-900">AgroTech AI</span>
+            <span className="text-2xl font-bold tracking-wide text-green-900">
+              AgroTech AI
+            </span>
           </Link>
 
           {/* Desktop Navbar */}
-          <nav className="hidden md:flex items-center gap-8 font-bold text-green-900 ">
-            {["weather","MarketRates","news","GovtScheme"].map((item)=>(
-              <Link
-                key={item}
-                to={`/${item}`}
-                className="relative hover:text-yellow-400 transition
-                  after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-400 after:transition-all hover:after:w-full"
-              >
-                {item.charAt(0).toUpperCase()+item.slice(1)}
-              </Link>
-            ))}
-            
+          <nav className="hidden md:flex items-center gap-8 font-bold text-green-900">
+            {["weather", "MarketRates", "news", "GovtScheme"].map((item) => (
+  <Link key={item} to={`/${item}`} className="relative hover:text-yellow-400 transition">
+    {navbarText[item][language]}
+  </Link>
+))}
+
+
+            {/* 🌐 Language Toggle (Desktop) */}
+            <LanguageToggle />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -49,16 +52,17 @@ export default function Header() {
         {/* Mobile Dropdown */}
         {open && (
           <div className="md:hidden bg-white/20 backdrop-blur-md border-t border-white/10 px-6 pb-6 space-y-4 font-bold text-green-900">
-            {["weather","MarketRates","news","GovtScheme","store"].map((item)=>(
-              <Link
-                key={item}
-                to={`/${item}`}
-                className="block hover:text-yellow-400 transition"
-              >
-                {item.charAt(0).toUpperCase()+item.slice(1)}
-              </Link>
-            ))}
-            
+            {["weather", "MarketRates", "news", "GovtScheme", "store"].map((item) => (
+  <Link key={item} to={`/${item}`} className="block hover:text-yellow-400 transition">
+    {navbarText[item][language]}
+  </Link>
+))}
+
+
+            {/* 🌐 Language Toggle (Mobile) */}
+            <div className="pt-4">
+              <LanguageToggle />
+            </div>
           </div>
         )}
       </div>

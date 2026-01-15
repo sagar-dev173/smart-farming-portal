@@ -1,6 +1,7 @@
-import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const CropCard = ({ item }) => {
+  const { language } = useLanguage();
   if (!item) return null;
 
   return (
@@ -9,12 +10,12 @@ const CropCard = ({ item }) => {
       {/* LEFT SECTION — Text Details */}
       <div className="flex-1">
         <h2 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
-          🌿 {item.crop}
+          🌿 {item.crop[language]}
         </h2>
 
         <p className="text-gray-600 mb-3 text-sm">
-          <span className="font-semibold">Market:</span> {item.mandi} <br />
-          <span className="font-semibold">Variety:</span> {item.category || "N/A"}
+          <span className="font-semibold">Market:</span> {item.mandi[language]} <br />
+          <span className="font-semibold">Variety:</span> {item.category[language] || "N/A"}
         </p>
 
         <div className="flex flex-col text-gray-800 font-semibold mt-2">
@@ -24,7 +25,7 @@ const CropCard = ({ item }) => {
         </div>
 
         <p className="text-gray-500 mt-2 text-xs">
-          {item.date || "Updated recently"}
+          {item.date[language] || "Updated recently"}
         </p>
       </div>
 
@@ -32,7 +33,7 @@ const CropCard = ({ item }) => {
       <div className="ml-4 flex flex-col items-center">
         <img
           src={item.image}
-          alt={item.crop}
+          alt={item.crop[language]}
           className="w-20 h-20 object-cover rounded-lg shadow-sm border border-gray-200"
         />
 

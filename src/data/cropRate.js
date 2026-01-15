@@ -1,103 +1,102 @@
 export const cropRate = [
   {
     id: 1,
-    crop: "Wheat",
-    mandi: "Nagpur",
+    crop: { en: "Wheat", hi: "गेहूं" },
+    mandi: { en: "Nagpur", hi: "नागपुर" },
     minPrice: 2200,
     maxPrice: 2500,
-    category: "Grain",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/wheat.png"
+    category: { en: "Grain", hi: "अनाज" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/wheat.png"
   },
   {
     id: 2,
-    crop: "Rice",
-    mandi: "Nashik",
+    crop: { en: "Rice", hi: "चावल" },
+    mandi: { en: "Nashik", hi: "नाशिक" },
     minPrice: 3000,
     maxPrice: 3400,
-    category: "Grain",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/rice.jpg"
+    category: { en: "Grain", hi: "अनाज" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/rice.jpg"
   },
   {
     id: 3,
-    crop: "Tomato",
-    mandi: "Pune",
+    crop: { en: "Tomato", hi: "टमाटर" },
+    mandi: { en: "Pune", hi: "पुणे" },
     minPrice: 900,
     maxPrice: 1200,
-    category: "Vegetable",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/tomato.jpg"
+    category: { en: "Vegetable", hi: "सब्ज़ी" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/tomato.jpg"
   },
   {
     id: 4,
-    crop: "Cotton",
-    mandi: "Akola",
+    crop: { en: "Cotton", hi: "कपास" },
+    mandi: { en: "Akola", hi: "अकोला" },
     minPrice: 6000,
     maxPrice: 6900,
-    category: "Cash Crop",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/cotton.jpg"
+    category: { en: "Cash Crop", hi: "नकदी फसल" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/cotton.jpg"
   },
   {
     id: 5,
-    crop: "Sugarcane",
-    mandi: "Kolhapur",
+    crop: { en: "Sugarcane", hi: "गन्ना" },
+    mandi: { en: "Kolhapur", hi: "कोल्हापुर" },
     minPrice: 3200,
     maxPrice: 3600,
-    category: "Cash Crop",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/sugarcane.jpg"
+    category: { en: "Cash Crop", hi: "नकदी फसल" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/sugarcane.jpg"
   },
   {
     id: 6,
-    crop: "Onion",
-    mandi: "Aurangabad",
+    crop: { en: "Onion", hi: "प्याज़" },
+    mandi: { en: "Aurangabad", hi: "औरंगाबाद" },
     minPrice: 1200,
     maxPrice: 1600,
-    category: "Vegetable",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/onion.jpg"
-    
+    category: { en: "Vegetable", hi: "सब्ज़ी" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/onion.jpg"
   },
   {
     id: 7,
-    crop: "Maize",
-    mandi: "Solapur",
+    crop: { en: "Maize", hi: "मक्का" },
+    mandi: { en: "Solapur", hi: "सोलापुर" },
     minPrice: 1900,
     maxPrice: 2200,
-    category: "Grain",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/maize.jpg"
+    category: { en: "Grain", hi: "अनाज" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/maize.jpg"
   },
   {
     id: 8,
-    crop: "Chili",
-    mandi: "Amravati",
+    crop: { en: "Chili", hi: "मिर्च" },
+    mandi: { en: "Amravati", hi: "अमरावती" },
     minPrice: 5000,
     maxPrice: 5800,
-    category: "Spice",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/chili.jpg"
+    category: { en: "Spice", hi: "मसाला" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/chili.jpg"
   },
   {
     id: 9,
-    crop: "Potato",
-    mandi: "Satara",
+    crop: { en: "Potato", hi: "आलू" },
+    mandi: { en: "Satara", hi: "सातारा" },
     minPrice: 800,
     maxPrice: 1100,
-    category: "Vegetable",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/potato.jpg"
+    category: { en: "Vegetable", hi: "सब्ज़ी" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/potato.jpg"
   },
   {
     id: 10,
-    crop: "Soybean",
-    mandi: "Buldhana",
+    crop: { en: "Soybean", hi: "सोयाबीन" },
+    mandi: { en: "Buldhana", hi: "बुलढाणा" },
     minPrice: 3500,
     maxPrice: 4000,
-    category: "Grain",
-    date: "Updated: Nov 2025",
-    image:"/marketImg/soyabean.jpg"
-  },
+    category: { en: "Grain", hi: "अनाज" },
+    date: { en: "Updated: Nov 2025", hi: "अपडेट: नवम्बर 2025" },
+    image: "/marketImg/soyabean.jpg"
+  }
 ];

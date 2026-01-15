@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Leaf,
   ArrowRight,
@@ -10,11 +10,12 @@ import { cropRate } from "../data/cropRate";
 import Header from "../components/Header";
 import WeatherCard from "../components/WeatherCard";
 import { useWeather } from "../hooks/useweather";
-
-
+import { useLanguage } from "../context/LanguageContext";
+import { commonText } from "../lang/commonLang";
+import { schemesData } from "../data/schemesData";
 const Home = () => {
   const [crop, setCrop] = useState([]);
- 
+ const { language } = useLanguage();
 
   useEffect(() => {
     setCrop(cropRate);
@@ -44,10 +45,10 @@ const Home = () => {
 
         <div className="relative z-20">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-[0_0_30px_rgba(255,255,255,0.8)] animate-pulse">
-            Smart Farming.
+            {commonText.Herohead1[language]}
             <span className="text-yellow-300 drop-shadow-[0_0_25px_rgba(255,255,0,0.7)]">
               {" "}
-              Smarter Future.
+              {commonText.Herohead2[language]}
             </span>
           </h1>
 
@@ -61,7 +62,7 @@ const Home = () => {
             }}
           >
             <button className="mt-10 bg-yellow-400 text-black px-12 py-4 rounded-3xl font-semibold shadow-2xl hover:bg-yellow-500 transition-all duration-300 flex items-center mx-auto gap-3 animate-bounce-slow">
-              Explore Farming Info <ArrowRight size={20} />
+              {commonText.HeroDesc[language]} <ArrowRight size={20} />
             </button>
           </Link>
 
@@ -83,7 +84,7 @@ const Home = () => {
 {/* ========================== WEATHER PREVIEW ========================== */}
 <section className="py-20 px-6 bg-linear-to-br from-sky-800 to-sky-950 text-white">
   <h2 className="text-4xl font-bold mb-10 text-center">
-    🌦 Weather Forecast
+    {`🌦 ${commonText.weatherTitle[language]}`} 
   </h2>
 
   {loading ? (
@@ -101,7 +102,7 @@ const Home = () => {
       to="/weather"
       className="inline-block bg-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:bg-yellow-500 transition"
     >
-      Show Detailed Weather →
+      {commonText.weatherRM[language]} →
     </Link>
   </div>
 </section>
@@ -114,7 +115,7 @@ const Home = () => {
       >
 
         <h2 className="text-3xl font-bold mb-6 text-center">
-          📰 Live Agriculture News
+          📰 {commonText.latestNews[language]}
         </h2>
 
         {/* Scrolling Container */}
@@ -134,7 +135,7 @@ const Home = () => {
             to="/news"
             className="inline-block bg-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:bg-yellow-500 transition"
           >
-            Read More News →
+            {commonText.readMore[language]} →
           </Link>
         </div>
 
@@ -165,7 +166,7 @@ const Home = () => {
         }}
       >
         <h2 className="text-4xl font-bold text-green-700 mb-10 text-center">
-          Seasonal Crop Rate
+          {commonText.marketRatesTitle[language]}
         </h2>
 
         {/* RESPONSIVE GRID + CENTER ITEMS */}
@@ -188,28 +189,26 @@ const Home = () => {
             className="bg-green-600 text-white px-10 py-3 rounded-lg shadow hover:bg-green-700 transition flex items-center gap-2"
           >
             <Leaf className="w-5 h-5 text-white" />
-            Explore More Crops
+            {commonText.marketRatesRM[language]}
           </Link>
         </div>
       </section>
 
-
-
       {/* ========================== GOVT SCHEMES ========================== */}
       <section className="py-10 px-6 bg-white">
         <h2 className="text-4xl font-bold text-green-700 mb-10">
-          Government Schemes
+          {commonText.govtSchemes[language]}
         </h2>
 
         <ul className="space-y-4">
           <li className="p-5 bg-gray-50 rounded-xl shadow border hover:bg-gray-100">
-            PM-Kisan Samman Nidhi Yojna
+           {schemesData[1].title[language]}
           </li>
           <li className="p-5 bg-gray-50 rounded-xl shadow border hover:bg-gray-100">
-            Soil Health Card Scheme
+            {schemesData[2].title[language]}
           </li>
           <li className="p-5 bg-gray-50 rounded-xl shadow border hover:bg-gray-100">
-            Crop Insurance (PMFBY)
+            {schemesData[3].title[language]}
           </li>
         </ul>
 
@@ -218,7 +217,7 @@ const Home = () => {
             to="/GovtScheme"
             className="bg-green-600 text-white px-10 py-3 rounded-xl shadow hover:bg-green-700 transition flex items-center gap-2"
           >
-            Explore more 🌿
+            {commonText.readMore[language]} 🌿
           </Link>
         </div>
 

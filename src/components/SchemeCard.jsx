@@ -1,7 +1,9 @@
-import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 import { Tractor, Sprout, Landmark, CheckCircle } from "lucide-react";
 
 const SchemeCard = ({ scheme }) => {
+  const { language } = useLanguage();
+
   return (
     <div
       className="
@@ -23,13 +25,13 @@ const SchemeCard = ({ scheme }) => {
       <div className="flex items-center gap-2">
         <Sprout size={22} className="text-green-700" />
         <h2 className="text-xl font-extrabold text-green-800 tracking-wide">
-          {scheme.title}
+          {scheme.title[language]}
         </h2>
       </div>
 
       {/* Description (Clamped for consistency) */}
       <p className="text-gray-700 text-sm mt-3 leading-relaxed line-clamp-3">
-        {scheme.description}
+        {scheme.description[language]}
       </p>
 
       {/* Benefits & Eligibility */}
@@ -39,7 +41,7 @@ const SchemeCard = ({ scheme }) => {
           <Landmark size={16} className="text-green-700 mt-1 shrink-0" />
           <span>
             <span className="font-semibold text-green-700">Benefits: </span>
-            {scheme.benefits}
+            {scheme.benefits[language]}
           </span>
         </p>
 
@@ -47,14 +49,14 @@ const SchemeCard = ({ scheme }) => {
           <CheckCircle size={16} className="text-green-700 mt-1 shrink-0" />
           <span>
             <span className="font-semibold text-green-700">Eligibility: </span>
-            {scheme.eligibility}
+            {scheme.eligibility[language]}
           </span>
         </p>
 
       </div>
 
       {/* Date */}
-      <p className="text-gray-500 text-xs mt-4">{scheme.date}</p>
+      <p className="text-gray-500 text-xs mt-4">{scheme.date[language]}</p>
 
       {/* CTA */}
       <a

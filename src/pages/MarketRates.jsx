@@ -3,15 +3,17 @@ import { cropRate } from "../data/cropRate";
 import CropCard from "../components/CropCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { commonText } from "../lang/commonLang";
+import { useLanguage } from "../context/LanguageContext";
 
 const CropRates = () => {
+  const { language } = useLanguage();
   return (
-    <div className="min-h-screen bg-gray-50 relative overflow-hidden">
+    <div className="min-h-screen bg-gray-50 relative ">
 
-      {/* Sticky Header */}
-      <header className="sticky top-0 z-50">
-        <Header />
-      </header>
+     <header className="sticky top-0 z-50">
+            <Header />
+          </header>
 
       {/* ================= HERO BANNER ================= */}
       <section className="relative w-full h-72 sm:h-96 lg:h-112 overflow-hidden rounded-b-3xl shadow-lg">
@@ -24,7 +26,7 @@ const CropRates = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-6">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg">
-            📊 Market Rates
+            📊 {commonText.marketRatesTitle[language]}
           </h1>
           <p className="text-white/90 mt-3 text-base sm:text-lg max-w-xl">
             Latest mandi prices for Tomato, Sugarcane, Onion & other crops
@@ -48,7 +50,6 @@ const CropRates = () => {
 
       {/* ================= BACKGROUND DECOR ================= */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-yellow-200 rounded-full opacity-15 blur-3xl"></div>
 
       {/* Footer */}
       <Footer />

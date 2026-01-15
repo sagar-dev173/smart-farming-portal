@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import WeatherCard from "../components/WeatherCard";
-
+import Header from "../components/Header";
+import { useLanguage } from "../context/LanguageContext";
+import { commonText } from "../lang/commonLang";
 const Weather = () => {
+  const { language } = useLanguage();
   const [city, setCity] = useState("Raipur");
   const [current, setCurrent] = useState(null);
   const [forecast, setForecast] = useState([]);
@@ -18,7 +21,7 @@ const Weather = () => {
       const CITY = `${city},IN`;
 
       const res1 = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric&lang=${language}`
       );
       const cur = await res1.json();
 
@@ -49,6 +52,9 @@ const Weather = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-500 to-indigo-700 px-4 py-6">
+      <header className="sticky top-0 z-50">
+        <Header />
+      </header>
       <div className="max-w-md mx-auto">
 
         {/* HEADER (Mobile First) */}
