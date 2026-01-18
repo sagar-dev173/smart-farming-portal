@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@keyframes float1 {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  50% { transform: translateY(-40px) translateX(20px) scale(1.1); }
+  100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+@keyframes float2 {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  50% { transform: translateY(30px) translateX(-20px) scale(1.05); }
+  100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+@keyframes float3 {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-30px) scale(0.95); }
+  100% { transform: translateY(0px) scale(1); }
+}
+.animate-float1 { animation: float1 7s infinite ease-in-out; }
+.animate-float2 { animation: float2 9s infinite ease-in-out; }
+.animate-float3 { animation: float3 11s infinite ease-in-out; }
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.4s ease-out;
+}
